@@ -18,6 +18,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"BroCode" ofType:@"pdf"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [WebView loadRequest:request];
+    [WebView setScalesPageToFit:YES];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
